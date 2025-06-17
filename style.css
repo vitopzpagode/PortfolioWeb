@@ -43,11 +43,14 @@ body {
   margin: 0 10px;
   color: var(--text-light);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: none; /* remove transição */
+  outline: none;
 }
 
 .nav a:hover {
-  color: var(--primary-color);
+  color: var(--text-light); /* mantém mesma cor no hover */
+  text-decoration: none;
+  outline: none;
 }
 
 .section {
@@ -67,11 +70,11 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: none;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: none;
 }
 
 .card img {
@@ -86,12 +89,14 @@ body {
   text-decoration: none;
   color: var(--link-color);
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: none;
+  outline: none;
 }
 
 .card a:hover {
-  text-decoration: underline;
-  color: var(--primary-color);
+  color: var(--link-color); /* mesma cor no hover */
+  text-decoration: none;
+  outline: none;
 }
 
 .infos {
@@ -118,22 +123,33 @@ body {
 .footer a {
   color: var(--text-light);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: none;
+  outline: none;
 }
 
 .footer a:hover {
-  color: var(--primary-color);
+  color: var(--text-light);
+  text-decoration: none;
+  outline: none;
 }
 
 .redes a {
   margin: 0 10px;
   color: var(--text-light);
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  transition: none;
+  outline: none;
 }
 
 .redes a:hover {
-  color: var(--primary-color);
+  color: var(--text-light);
+  outline: none;
+}
+
+/* Remove a cor azul do focus e active para todos links e botões */
+a, button {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Responsividade adicional */
@@ -159,4 +175,3 @@ body {
     flex-direction: column;
   }
 }
-
