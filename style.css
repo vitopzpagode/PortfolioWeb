@@ -1,163 +1,215 @@
 :root {
-  --primary-color: #00aced;
-  --bg-dark: #222;
-  --text-light: #fff;
-  --border-color: #ccc;
-  --link-color: #0066cc;
-  --font: Arial, sans-serif;
+  --primary: #00aced;
+  --secondary: #0077cc;
+  --dark: #1f1f1f;
+  --light: #ffffff;
+  --gray: #e5e5e5;
+  --font-main: 'Inter', 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font);
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: var(--font-main);
+  background: #f8fafc;
+  color: var(--dark);
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-dark);
-  color: var(--text-light);
-  padding: 1rem 2rem;
+  background: var(--dark);
+  color: var(--light);
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
   position: relative;
-}
-
-.titulo-centralizado {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
+  z-index: 10;
 }
 
 .logo {
   width: 60px;
-  height: auto;
+}
+
+.titulo-centralizado {
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
 }
 
 .nav a {
-  margin: 0 10px;
-  color: var(--text-light);
-  text-decoration: none;
-  transition: none; /* remove transição */
-  outline: none;
+  color: var(--light);
+  font-weight: 500;
+  position: relative;
 }
 
-.nav a:hover {
-  color: var(--text-light); /* mantém mesma cor no hover */
-  text-decoration: none;
-  outline: none;
+.nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--primary);
+  width: 0%;
+  transition: var(--transition);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 .section {
-  padding: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .card {
-  border: 1px solid var(--border-color);
-  padding: 1.5rem;
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
   text-align: center;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: none;
+  transition: var(--transition);
 }
 
 .card:hover {
-  transform: none;
+  transform: translateY(-5px);
 }
 
 .card img {
-  width: 80px;
-  height: auto;
-  margin-bottom: 10px;
+  margin: 0 auto 1rem;
+  width: 70px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .card a {
-  display: inline-block;
-  margin-top: 8px;
-  text-decoration: none;
-  color: var(--link-color);
-  font-weight: bold;
-  transition: none;
-  outline: none;
+  color: var(--secondary);
+  font-weight: 600;
+  transition: var(--transition);
 }
 
 .card a:hover {
-  color: var(--link-color); /* mesma cor no hover */
-  text-decoration: none;
-  outline: none;
+  color: var(--primary);
 }
 
 .infos {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
+  margin-top: 3rem;
 }
 
 .aside {
   flex: 1;
-  border: 1px solid var(--border-color);
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 8px;
+  background: var(--light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 280px;
 }
 
 .footer {
-  background: var(--bg-dark);
-  color: var(--text-light);
-  padding: 1rem 2rem;
+  background: var(--dark);
+  color: var(--light);
   text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
 }
 
 .footer a {
-  color: var(--text-light);
-  text-decoration: none;
-  transition: none;
-  outline: none;
+  color: var(--light);
+  font-weight: 500;
+  transition: var(--transition);
 }
 
 .footer a:hover {
-  color: var(--text-light);
-  text-decoration: none;
-  outline: none;
+  color: var(--primary);
+}
+
+.redes {
+  margin-top: 1rem;
 }
 
 .redes a {
-  margin: 0 10px;
-  color: var(--text-light);
-  font-size: 1.5rem;
-  transition: none;
-  outline: none;
+  font-size: 1.6rem;
+  margin: 0 12px;
+  transition: transform var(--transition), color var(--transition);
 }
 
 .redes a:hover {
-  color: var(--text-light);
-  outline: none;
+  transform: scale(1.2);
+  color: var(--primary);
 }
 
-/* Remove a cor azul do focus e active para todos links e botões */
-a, button {
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
+/* Foco acessível */
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
 }
 
-/* Responsividade adicional */
+/* Responsivo */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
+    gap: 1rem;
     align-items: flex-start;
-    gap: 0.5rem;
   }
 
   .titulo-centralizado {
@@ -165,10 +217,9 @@ a, button {
     transform: none;
   }
 
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  .nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .infos {
