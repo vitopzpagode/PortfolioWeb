@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio Pessoal - Vitor Chagas</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
   <header class="header">
@@ -28,31 +27,28 @@
       <h2 id="titulo-projetos">Projetos</h2>
       <div class="cards">
         <article class="card">
-          <img src="logogithub.png" alt="Imagem do Projeto 1" />
+          <img src="logogithub.png" alt="Projeto Introdução Web" />
           <h3>Projeto 1 - Introdução Web</h3>
           <a href="https://github.com/vitopzpagode/IntroducaoWebAula1.git" target="_blank" rel="noopener noreferrer">
             Ver no GitHub
           </a>
         </article>
-
         <article class="card">
-          <img src="logogithub.png" alt="Imagem do Projeto 2" />
+          <img src="logogithub.png" alt="Projeto Box Model" />
           <h3>Projeto 2 - Box Model</h3>
           <a href="https://github.com/vitopzpagode/BoxModel.git" target="_blank" rel="noopener noreferrer">
             Ver no GitHub
           </a>
         </article>
-
         <article class="card">
-          <img src="logogithub.png" alt="Imagem do Projeto 3" />
+          <img src="logogithub.png" alt="Projeto Lógica Java" />
           <h3>Projeto 3 - Lógica em Java</h3>
           <a href="https://github.com/vitopzpagode/ExercicioLogicaJava.git" target="_blank" rel="noopener noreferrer">
             Ver no GitHub
           </a>
         </article>
-
         <article class="card">
-          <img src="logogithub.png" alt="Imagem do Projeto 4" />
+          <img src="logogithub.png" alt="Projeto Portfólio Web" />
           <h3>Projeto 4 - Portfólio Web</h3>
           <a href="https://github.com/vitopzpagode/PortfolioWeb.git" target="_blank" rel="noopener noreferrer">
             Ver no GitHub
@@ -69,7 +65,6 @@
           <p><strong>Formação:</strong> Cursando Técnico em Informática - Colégio ULBRA São Lucas</p>
           <p><strong>Experiência:</strong> Em busca de estágio na área de informática para adquirir experiência prática.</p>
         </div>
-
         <div class="aside">
           <h3>Objetivos Profissionais</h3>
           <p>Tenho interesse em atuar na área de Informática e estou focado em aprender e crescer profissionalmente.</p>
@@ -82,14 +77,26 @@
     <h2 id="titulo-contato">Contato</h2>
     <p>Email: <a href="mailto:vitorchagasdasilva623@gmail.com">vitorchagasdasilva623@gmail.com</a></p>
     <div class="redes">
-      <a href="https://github.com/vitopzpagode" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Vitor Chagas">
+      <a href="https://github.com/vitopzpagode" target="_blank" aria-label="GitHub de Vitor Chagas">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/vitor-chagas-da-silva-655bb5368/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Vitor Chagas">
+      <a href="https://www.linkedin.com/in/vitor-chagas-da-silva-655bb5368/" target="_blank" aria-label="LinkedIn de Vitor Chagas">
         <i class="fab fa-linkedin"></i>
       </a>
     </div>
   </footer>
+
+  <button id="btn-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    const btnTop = document.getElementById("btn-top");
+    window.addEventListener("scroll", () => {
+      btnTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 
 </body>
 </html>
